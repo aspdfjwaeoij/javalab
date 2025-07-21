@@ -11,6 +11,9 @@ public class ExceptionEx {
 		int b = 0;
 		int c = 0;
 		
+		String currentDir = System.getProperty("user.dir");
+		System.out.println("현재 작업 폴더: " + currentDir);
+		
 		try {
 			c = a / b;
 			
@@ -24,8 +27,10 @@ public class ExceptionEx {
 		
 		FileInputStream fis = null;
 		
+		System.out.println();
+		
 		try {
-			fis = new FileInputStream("a.txt");
+			fis = new FileInputStream("src/javalab/ch14/a.txt");
 			// 파일에 있는 데이터로 나눗셈을 할 경우
 			// catch를 여러개 적용하는 경우 작은 범위부터 큰 범위 순으로 적용
 		} catch(FileNotFoundException e) {
@@ -43,6 +48,8 @@ public class ExceptionEx {
 				}
 			}
 		}
+		
+		System.out.println();
 		
 		// try-with-resources
 		// AutoColseable 인터페이스의 close() 메서드가 구현되어야 한다.
